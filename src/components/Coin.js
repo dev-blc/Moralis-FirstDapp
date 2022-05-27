@@ -19,7 +19,7 @@ function Coin({ perc, setPerc, token, setModalToken, setVisible }) {
     }
   }, [perc]);
 
-  async function vote(updown) {
+  async function addVote(updown) {
     let options = {
       contractAddress: "0x85eFFfb71e97F97f268F8C15efcEcF3E8A00D3A6",
       functionName: "addVote",
@@ -75,7 +75,7 @@ function Coin({ perc, setPerc, token, setModalToken, setVisible }) {
         <div className="votes">
           <Button
             onClick={() => {
-              if (isAuthenticated) { vote(true) }
+              if (isAuthenticated) { addVote(true) }
               else { alert("Authenticate to vote!!") }
               
             }}
@@ -86,7 +86,7 @@ function Coin({ perc, setPerc, token, setModalToken, setVisible }) {
           <Button
             color="red"
             onClick={() => {
-              if (isAuthenticated) { vote(false) }
+              if (isAuthenticated) { addVote(false) }
               else { alert("Authenticate to vote!!") }
 
             }}
